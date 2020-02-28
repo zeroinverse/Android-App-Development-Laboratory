@@ -55,6 +55,17 @@
         app:layout_constraintTop_toBottomOf="@+id/bt_update" />
 
     <Button
+        android:id="@+id/bt_display_all"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="DISPLAY ALL"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_display" />
+
+    <Button
         android:id="@+id/bt_delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -65,63 +76,49 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bt_insert" />
 
-    <TextView
-        android:paddingLeft="16dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="CODE"
-        app:layout_constraintBottom_toTopOf="@+id/code" />
 
     <EditText
         android:id="@+id/code"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="236dp"
         android:layout_marginRight="16dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bt_delete" />
 
     <TextView
-        android:paddingLeft="16dp"
+        android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="NAME"
-        app:layout_constraintBottom_toTopOf="@+id/name" />
+        android:paddingLeft="16dp"
+        android:text="CODE"
+        app:layout_constraintBottom_toTopOf="@+id/code"
+        tools:layout_editor_absoluteX="-16dp" />
 
-    <EditText
-        android:id="@+id/name"
+    <TextView
+        android:id="@+id/result"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
+        android:layout_marginTop="68dp"
         android:layout_marginRight="16dp"
-        android:layout_marginTop="32dp"
+        android:inputType="textMultiLine"
+        android:text="Query results here"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/code" />
 
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
         android:paddingLeft="16dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:text="RESULT"
-        app:layout_constraintBottom_toTopOf="@+id/result" />
-
-    <TextView
-        android:id="@+id/result"
-        android:inputType="textMultiLine"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="40dp"
-        android:text="Query results here"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name" />
+        app:layout_constraintTop_toBottomOf="@+id/code" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

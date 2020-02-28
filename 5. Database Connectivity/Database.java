@@ -15,7 +15,8 @@ public class Database extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE INFO(CODE INT, NAME VARCHAR)");
+        db.execSQL("CREATE TABLE INFO(NAME VARCHAR, GENDER VARCHAR, CODE INT PRIMARY KEY, " +
+                "DEPARTMENT VARCHAR, SALARY VARCHAR)");
     }
 
     @Override
@@ -24,19 +25,24 @@ public class Database extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void insert(int code, String name) {
+    public void insert(int code, String name, String gender, String dept, String salary) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put("code", code);
         cv.put("name", name);
+        cv.put("gender", gender);
+        cv.put("department", dept);
+        cv.put("salary", salary);
         db.insert("info", null, cv);
     }
 
-    public void update(int code, String name) {
+    public void update(int code, String name, String gender, String dept, String salary) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
-        cv.put("code", code);
         cv.put("name", name);
+        cv.put("gender", gender);
+        cv.put("department", dept);
+        cv.put("salary", salary);
         db.update("info", cv, "code=?", new String[]{Integer.toString(code)});
     }
 
@@ -46,7 +52,14 @@ public class Database extends SQLiteOpenHelper {
     }
 
     public Cursor display(int code) {
+
         SQLiteDatabase db = this.getWritableDatabase();
         return db.rawQuery("select * from info where code=" + Integer.toString(code), null);
     }
+
+    public Cursor display() {
+        SQLiteDatabase db = this.getWritableDatabase();
+            return db.rawQuery("select * from info", null);
+    }
+
 }
